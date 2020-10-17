@@ -2,7 +2,7 @@ class Ground{
 
     constructor(){
         var options = {isStatic : true}
-        this.body = Bodies.rectangle(width/2,780,width,20,options);
+        this.body = Bodies.rectangle(width/2,680,width,20,options);
         World.add(world,this.body);
     }
 

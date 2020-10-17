@@ -13,10 +13,10 @@ class Paper{
 
     display(){
         var pos = this.body.position;
-        ellipseMode(CENTER);
-        fill(0);
+        ellipseMode(RADIUS);
+        fill(255);
         stroke(0);
-        ellipse(pos.x,pos.y,20,20);
+        ellipse(pos.x,pos.y,this.radius,this.radius);
 
     }
 }
