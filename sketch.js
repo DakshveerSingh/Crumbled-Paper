@@ -7,21 +7,19 @@ const Body = Matter.Body;
 var paper,dustBin;
 var ground;
 
-function preload()
-{
+function preload(){
 	
 }
 
 function setup() {
 	createCanvas(800, 700);
 
-
 	engine = Engine.create();
 	world = engine.world;
 
 	ground = new Ground();
-	paper = new Paper(700,200,20);
-	dustbin = new Bin();
+	dustBin = new DustBin(700,570);
+	paper = new Paper(100,650,70);
 
 	Engine.run(engine);
   
@@ -29,20 +27,21 @@ function setup() {
 
 
 function draw() {
-  rectMode(CENTER);
-  background(0);
+	console.log(dustBin.position);
+  background(201);
   
 	ground.display();
 	paper.display();
 	dustBin.display();
 
+	keyPressed();
   drawSprites();
  
 }
 
 function keyPressed(){
 	if(keyDown(UP_ARROW)){
-		Matter.Body.applyForce(paper,paper.position,{x:85,y:-85});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x:50,y:-85});
 
 	}
 }

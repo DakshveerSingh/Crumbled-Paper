@@ -9,14 +9,12 @@ class Paper{
     this.body = Bodies.circle(x,y,radius,options);
     World.add(world,this.body);
     this.radius = radius;
+    this.image = loadImage("paper.png");
     }
 
     display(){
         var pos = this.body.position;
-        ellipseMode(RADIUS);
-        fill(255);
-        stroke(0);
-        ellipse(pos.x,pos.y,this.radius,this.radius);
-
+        imageMode(CENTER);
+        image(this.image, pos.x, pos.y, this.radius, this.radius);
     }
 }
